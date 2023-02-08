@@ -1,15 +1,14 @@
 ---
-title: Unity dialogue editor and system
-description: "Using Scriptable Objects and the NodeEditor API to make a designer-friendly dialogue system."
+title: Unity dialogue system
+description: "Using Scriptable Objects to make a designer-friendly dialogue system."
 date: Aug 12 2022
 ---
 
-This is actually 2 projects in 1. 
-The first is a dialogue system that uses scriptable objects to manage dialogue sequences as data.
-The second is a Node Editor that can be used to create the afformentioned scriptable objects.
+This is a dialogue system that uses scriptable objects to manage dialogue sequences as data. I developed it because I needed a simple tool for quickly adding dialogue or interactions to different types of games. 
+It uses an IActor and IPanel interface to allow for dependency injection, letting you define any monobehaviour as an Actor that can be interacted with. 
+Here's a small example of it working in conjunction with a basic first person controller. The actor itself invokes a dialogue event that lets the dialogue manager know when to enable specific UI elements or images.
+Dialogue is defined as scriptable data objects, allowing designers to write out dialogue and add portraits to a conversation without having to code. 
+Once a dialogue object is created, adding it is as simple as dragging it unto an Actor game object in the scene.
+I want to move away from using the Unity editor for writing out scripts later on, possibly parsing a simple txt or JSON file containing the dialogue.
 
-Having these 2 systems in place allows writers to design dialogue sequences intuitively and quickly.
-I started making this tool after getting frustrated with the tediousness of storing all of my dialogue 
-scripts inside .txt or JSON files that had to be imported into the Unity editor. It's not finished yet,
-there's loads of features I want to add. But in the following weeks I will be documenting and polishing this tool 
-as an experimental foray into the experimental Unity NodeAPI.
+https://github.com/GarcGustavo/DungeonAutomata

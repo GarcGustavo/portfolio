@@ -1,0 +1,13 @@
+---
+title: Procedural generation and Djikstra maps
+description: "Using cellular automata and Djikstra maps to generate/populate levels procedurally."
+date: Feb 10 2022
+---
+
+I created a basic game that utilizes cellular automata and binary space partitioning to procedurally create dungeon layouts. I also implemented Djisktra maps to populate the dungeon with items, enemies, and other things. 
+A huge advantage of using Djisktra maps is that they can also be used for AI purposes if you have a grid-based, turn-based game. Since each unit has it's own internal Djistkra map, itt lets you easily add objective-based behaviours to units.
+Below is a heatmap representation of an example Djistkra map for the player unit. The closer a tile is to the player, the brighter it appears. AI can independently choose to run away, chase, or even ignore the player unit depending on its internal state.
+This a really useful tool for handling procedural generation, population, and AI for most grid-based roguelikes. You can find a better, more in-depth example of the concept at: http://roguebasin.com/index.php/Dijkstra_Maps_Visualized
+
+https://github.com/GarcGustavo/DungeonAutomata
+https://github.com/GarcGustavo/PL_Project
