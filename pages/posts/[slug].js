@@ -15,7 +15,7 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Layout, { GradientBackground } from '../../components/Layout';
 import SEO from '../../components/SEO';
-
+//import Image from "next/image";
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -33,7 +33,7 @@ export default function PostPage({
   frontMatter,
   prevPost,
   nextPost,
-  globalData,
+  globalData
 }) {
   return (
     <Layout>

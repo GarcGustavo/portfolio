@@ -8,15 +8,15 @@ export const getGlobalData = () => {
   const footerText = process.env.BLOG_FOOTER_TEXT
     ? decodeURI(process.env.BLOG_FOOTER_TEXT)
     : 'All rights reserved.';
-  var fs = require('fs');
+  //const fs = require('fs');
   //array of strings with filenames
-  var files = fs.readdirSync('/images/');
+  //const files = fs.readdirSync('posts/images/');
   //const imageDir = "/images";
 
   return {
     name,
     blogTitle,
     footerText,
-    files,
+    //files
   };
 };
