@@ -4,7 +4,27 @@ description: "A suite of utility tools used to create grid-based games."
 date: Feb 10 2022
 ---
 
-This isn't a single project but a collection of various tools I've created to aid with rapidly prototyping grid-based games. 
+This isn't a single project, but a collection of various tools I've created to aid with rapidly prototyping grid-based games. 
+The majority of the framework mostly consists of a variety of tools to implement different grid-based gameplay elements. Things such as target selection, movement, unit/environment interactions, combat, procedural generation, etc...
 This also includes some basic editor tools that I use to quickly create units, tiles, and other data without having to leave the Unity editor.
+
+Action System:
+One of the main components driving this prototype is an action system that implements the command pattern. This is one of the most useful patterns I've used lately, dependency injection and interfaces are a great way of keeping your code organized in the long run. More importantly however, it lets me queue up actions and events for multi-unit, turn-based gameplay. This lets me sort action execution via whatever priority system I like, "rewind" actions/turns, and implement more complex turn-based systems (like SMT's press-turn system for example). The current implementation isn't anything fancy, just an energy system that allows the player multiple actions per turn, and an enemy manager that queues up enemy actions once the player's turn has ended. The system is designed to be easy to extend, so in the future I might reuse it for more strategy oriented gameplay systems.
+
+Data Editors:
+I needed an easy way to generate and edit game content. Serialized Objects are useful for storing data, but I wanted a more user-friendly option for creating it. Using the Odin serialization plug-in, I made a series of small editor tools that allow the user to create a variety of data objects through a single window. For this example, I made a player unit, enemy, tile, and attack editor window. It's a simple tool, but it allows me to add new content quickly and easily.
+
+Utility Classes:
+I separated particularly useful and recurring functionality into utility classes to use for multiple systems. A lot of the grid utility functions have to do with procedural generation, movement calculations, and other algorithms that are useful in isometric and cartesian coordinate grids.
+
+Map generation:
+Map generation using cellular automata and binary space partitioning. Basically a map generator with a bunch of tweakable parameters that produces a tile-based map of 1's and 0's. After that you can add in different tile types and rulesets to populate the map as 2D tiles or 3D objects. Still working on mesh generation with occlusion culling but got distracted midway through implementing it lol
+
+Djitskra maps:
+I also implemented Djisktra maps to populate the levels with items, enemies, and other things. 
+A huge advantage of using Djisktra maps is that they can also be used for AI purposes if you have a grid-based, turn-based game. Since each unit has it's own internal Djistkra map, it lets you easily add objective-based behaviours to units.
+Below is a heatmap representation of an example Djistkra map for the player unit. The closer a tile is to the player, the brighter it appears. AI can independently choose to run away, chase, or even ignore the player unit depending on its internal state.
+This is a really useful tool for handling procedural generation and AI for most grid-based games. 
+You can find a more in-depth example of the concept at: http://roguebasin.com/index.php/Dijkstra_Maps_Visualized
 
 https://github.com/GarcGustavo/DungeonAutomata
