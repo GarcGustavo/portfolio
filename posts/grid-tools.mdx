@@ -1,12 +1,12 @@
 ---
-title: Grid utility editor tools and other helpful functions
+title: Grid utilities and editor tools
 description: "A suite of utility tools used to create grid-based games."
-date: Feb 10 2022
+date: Feb 14 2023
 ---
 
 This isn't a single project, but a collection of various tools I've created to aid with rapidly prototyping grid-based games. 
 The majority of the framework mostly consists of a variety of tools to implement different grid-based gameplay elements. Things such as target selection, movement, unit/environment interactions, combat, procedural generation, etc...
-This also includes some basic editor tools that I use to quickly create units, tiles, and other data without having to leave the Unity editor.
+This also includes some basic editor tools that I use to quickly create units, tiles, and other data without having to leave the Unity editor. A lot of these systems will get there own articles in the future, but for now I'll just be posting a few screenshots and a brief description.
 
 Action System:
 One of the main components driving this prototype is an action system that implements the command pattern. This is one of the most useful patterns I've used lately, dependency injection and interfaces are a great way of keeping your code organized in the long run. More importantly however, it lets me queue up actions and events for multi-unit, turn-based gameplay. This lets me sort action execution via whatever priority system I like, "rewind" actions/turns, and implement more complex turn-based systems (like SMT's press-turn system for example). The current implementation isn't anything fancy, just an energy system that allows the player multiple actions per turn, and an enemy manager that queues up enemy actions once the player's turn has ended. The system is designed to be easy to extend, so in the future I might reuse it for more strategy oriented gameplay systems.
@@ -26,5 +26,8 @@ A huge advantage of using Djisktra maps is that they can also be used for AI pur
 Below is a heatmap representation of an example Djistkra map for the player unit. The closer a tile is to the player, the brighter it appears. AI can independently choose to run away, chase, or even ignore the player unit depending on its internal state.
 This is a really useful tool for handling procedural generation and AI for most grid-based games. 
 You can find a more in-depth example of the concept at: http://roguebasin.com/index.php/Dijkstra_Maps_Visualized
+
+Scene Switcher:
+While not exactly a "grid"-related tool, it helps me switch scenes in the Unity editor without having to rummage through all the project directories. Super simple implementation, but small quality of life editor tools help save huge amounts of time.
 
 https://github.com/GarcGustavo/DungeonAutomata

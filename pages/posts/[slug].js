@@ -15,6 +15,7 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Layout, { GradientBackground } from '../../components/Layout';
 import SEO from '../../components/SEO';
+import Image from 'next/image';
 //import Image from "next/image";
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -41,14 +42,18 @@ export default function PostPage({
         title={`${frontMatter.title} - ${globalData.name}`}
         description={frontMatter.description}
       />
-      <Header name={globalData.name} />
+      <Link href="/">
+        <a  className="pt-12 pb-2">
+          <Image src="/home.png" className="mx-auto opacity-100" alt="" layout='fixed' width='100' height='100'></Image>
+        </a>
+      </Link>
       <article className="px-6 md:px-0">
         <header>
-          <h1 className="text-3xl md:text-5xl dark:text-white text-center mb-12">
+          <h1 className="text-3xl md:text-5xl dark:text-white text-left mb-4 mt-6">
             {frontMatter.title}
           </h1>
           {frontMatter.description && (
-            <p className="text-xl mb-4">{frontMatter.description}</p>
+            <p className="text-xl mb-6">{frontMatter.description}</p>
           )}
         </header>
         <main>
