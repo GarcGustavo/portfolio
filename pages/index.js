@@ -19,7 +19,7 @@ export default function Index({ posts, globalData }) {
         <div className="mr-12 pt-4 mt-4 md:first:rounded-t-lg md:last:rounded-b-lg backdrop-blur-lg bg-white dark:bg-black dark:bg-opacity-30 bg-opacity-10 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 border-b-0 last:border-b">
                 <div className="prose dark:prose-dark pr-10 dark:bg-transparent bg-opacity-0 rounded-3xl text-1xl dark:text-white ml-5 mb-5" >
                     <p>
-                      Hello, I'm a software engineer based in Rochester, NY. 
+                      Hello, I am a software engineer based in Rochester, NY. 
                       I work full-time, but in my free time I like to work on a variety of gamedev topics.
                       This small blog is a platform for me to share devlogs for some of my personal projects and prototypes.
                       Currently, some of the articles are very brief overviews of tools or systems I already made, I plan on expanding most of these in the future.
