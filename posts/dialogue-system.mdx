@@ -1,14 +1,18 @@
 ---
-title: Scriptable objects for dialogue systems
+title: Dialogue systems with Scriptable Objects
 description: "Using Scriptable Objects to make a designer-friendly dialogue system."
 date: Feb 13 2023
 ---
 
 This is a dialogue system that uses scriptable objects to manage dialogue sequences as data. I needed a simple tool for quickly adding dialogue or interactions to different types of games, so I decided to make something lightweight for non-technical users. 
-It uses an IActor and IPanel interface to allow for dependency injection, letting you define any monobehaviour as an Actor that can be interacted with. 
+It uses an IActor and IPanel interface to allow for dependency injection, letting you define any monobehaviour as an Actor that can be interacted with. It also includes basic interaction logic for a first person controller.
 Here's a small example of it working in conjunction with a basic first person controller. The actor itself invokes a dialogue event that lets the dialogue manager know when to enable specific UI elements or images.
+![Dialogue system example 1](/dialogue2.gif)
+
 Dialogue is defined as scriptable data objects, allowing designers to write out dialogue and add portraits to a conversation without having to code. 
 Once a dialogue object is created, adding it is as simple as dragging it unto an Actor game object in the scene.
+![Dialogue system example 2](/dialogue_data.png)
+
 I want to move away from using the Unity editor for writing out scripts later on, possibly parsing a simple txt or JSON file containing the dialogue.
 
 https://github.com/GarcGustavo/DungeonAutomata/tree/main/_Project/Scripts/DialogueSystem

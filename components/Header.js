@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Col, Container, Row } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Header({ name }) {
   return (
@@ -11,11 +12,26 @@ export default function Header({ name }) {
                 <Image src="/profile.jpeg" className="rounded-full mx-auto opacity-100" alt="" layout='intrinsic' width='150' height='150'></Image>
               </Col>
               <Col>
-                <div className="text-1xl dark:text-white text-left ml-5 mb-5" >
+                <div className="text-1xl dark:text-white text-left ml-5 mb-2" >
                     <h1>Gustavo Reyes</h1>
                     <p>Software Engineer</p>
                     <p>greyescarrion@gmail.com</p>
                 </div>
+              <Row>
+                <Col className='flex items-center w-auto ml-3'>
+                  <Link href="https://github.com/GarcGustavo">
+                    <a  className="">
+                    <img src="https://img.icons8.com/glyph-neue/64/null/github.png"></img>
+                    </a>
+                  </Link>
+                  
+                  <Link href="https://www.linkedin.com/in/gustavo-reyes-886423129/">
+                    <a  className="">
+                      <img src="https://img.icons8.com/ios-filled/58/null/linkedin-circled--v1.png"/>
+                    </a>
+                  </Link>
+                </Col>
+              </Row>
               </Col>
             </Row>
           </Container>
